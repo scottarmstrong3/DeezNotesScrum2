@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class DeezNotesActivity extends Activity {
+    //http://www.sitepoint.com/creating-cloud-backend-android-app-using-parse/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

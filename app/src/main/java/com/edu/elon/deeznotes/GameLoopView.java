@@ -104,8 +104,11 @@ public class GameLoopView extends SurfaceView implements SurfaceHolder.Callback 
 
 
         public GameLoopThread() {
-            note = new Note(context);
-            note2 = new Note(context);
+            int num = 0;
+            note = new Note(context, num);
+            num++;
+            note2 = new Note(context, num);
+            num++;
             deleteButton  = new Delete(context);
 
             moveTouchX = note.x;

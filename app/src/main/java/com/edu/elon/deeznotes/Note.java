@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.Display;
@@ -19,10 +21,11 @@ public class Note {
     protected float x, y;
     protected int IDNumber;
     protected boolean isSelected;
+    private Paint paint = new Paint(Color.BLACK);
 
     private int screenWidth, screenHeight;
 
-    public Note (Context context) {
+    public Note (Context context, int num) {
         bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.note);
 
         width = bitmap.getWidth();
@@ -37,6 +40,7 @@ public class Note {
 
         x = screenWidth / 2;
         y = screenHeight / 2;
+        IDNumber = num;
     }
 
     public void doDraw(Canvas canvas) {
@@ -45,6 +49,10 @@ public class Note {
                 new Rect((int) (x - width/2), (int) (y- height/2),
                         (int) (x + width/2), (int) (y + height/2)),
                 null);
+        paint.setTextAlign(Paint.Align.CENTER);
+
+        paint.setAntiAlias(true);
+        canvas.drawText("Hello World", x, y, paint);
     }
 
     public void doUpdate(double elapsed, float touchX, float touchY) {
