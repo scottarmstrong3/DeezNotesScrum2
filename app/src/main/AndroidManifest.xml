@@ -19,7 +19,8 @@
         </activity>
         <activity
             android:name=".NoteViewActivity"
-            android:label="@string/title_activity_note_view" >
+            android:label="@string/title_activity_note_view"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
     </application>
 
